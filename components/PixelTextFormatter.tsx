@@ -26,7 +26,7 @@ const PixelTextFormatter = ({ text, maxWidth = 30 }) => {
   const formattedLines = splitIntoLines(text, maxWidth);
 
   return (
-    <p className="leading-3 text-xs font-mono">
+    <p className="font-mono text-xs leading-3">
       {formattedLines.map((line, index) => (
         <React.Fragment key={index}>
           ░ {line.toUpperCase()}

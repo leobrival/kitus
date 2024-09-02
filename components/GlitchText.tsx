@@ -61,7 +61,7 @@ export default function GlitchText({ text }) {
   }, [text]);
 
   return (
-    <h1 className="bg-stone-300 text-[6rem] p-2 leading-[6rem] uppercase">
+    <h1 className="bg-stone-300 p-2 text-[6rem] uppercase leading-[6rem]">
       {glitchedText}
     </h1>
   );

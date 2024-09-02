@@ -1,6 +1,6 @@
 function MissionReport() {
   const Perforation = () => (
-    <div className="flex flex-col justify-between py-2 px-4 gap-4">
+    <div className="flex flex-col justify-between gap-4 px-4 py-2">
       {[...Array(30)].map((_, i) => (
         <div key={i} className="min-h-6 min-w-6 rounded-full bg-stone-300" />
       ))}
@@ -8,11 +8,11 @@ function MissionReport() {
   );
 
   return (
-    <div className="divide-x aspect-video font-mono flex flex-row mx-auto bg-white shadow-lg relative overflow-hidden">
+    <div className="relative mx-auto flex aspect-video flex-row divide-x overflow-hidden bg-white font-mono shadow-lg">
       <Perforation />
       <div className="px-10 py-8">
         <header className="mb-6">
-          <h1 className="text-lg font-bold mb-2"># MISSION REPORT 75X9389</h1>
+          <h1 className="mb-2 text-lg font-bold"># MISSION REPORT 75X9389</h1>
           <p className="mb-1">
             SUBJECT: ANOMALOUS ENERGY SIGNATURES FROM KERBEROS 5
           </p>
@@ -21,7 +21,7 @@ function MissionReport() {
         </header>
 
         <section className="mb-6">
-          <h2 className="font-bold mb-2">## OVERVIEW</h2>
+          <h2 className="mb-2 font-bold">## OVERVIEW</h2>
           <p className="mb-4">
             During the exploration of Kerberos 5, our instruments detected
             unexplained energy bursts emanating from the object's polar region.
@@ -31,14 +31,14 @@ function MissionReport() {
         </section>
 
         <section className="mb-6">
-          <h2 className="font-bold mb-2">### OBSERVATIONS</h2>
-          <h3 className="font-bold mb-2">Surface Composition Analysis</h3>
-          <table className="w-full mb-4 border-collapse">
+          <h2 className="mb-2 font-bold">### OBSERVATIONS</h2>
+          <h3 className="mb-2 font-bold">Surface Composition Analysis</h3>
+          <table className="mb-4 w-full border-collapse">
             <thead>
               <tr className="border-b">
-                <th className="text-left p-2">Element/Compound</th>
-                <th className="text-left p-2">Conc. (ppm)</th>
-                <th className="text-left p-2">Notes</th>
+                <th className="p-2 text-left">Element/Compound</th>
+                <th className="p-2 text-left">Conc. (ppm)</th>
+                <th className="p-2 text-left">Notes</th>
               </tr>
             </thead>
             <tbody>
@@ -70,7 +70,7 @@ function MissionReport() {
             </tbody>
           </table>
 
-          <h3 className="font-bold mb-2">Energy Burst Analysis</h3>
+          <h3 className="mb-2 font-bold">Energy Burst Analysis</h3>
           <p>
             a) Frequency: Energy bursts occur at irregular intervals, averaging
             one event every 37.6

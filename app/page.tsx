@@ -12,9 +12,9 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="bg-stone-100 font-mono text-stone-800">
-      <header className="flex flex-col h-svh w-screen pr-4 pl-8 pb-8 pt-32 justify-around">
-        <div className="flex justify-between gap-4 items-end">
-          <div className="flex gap-2 items-start">
+      <header className="flex h-svh w-screen flex-col justify-around pb-8 pl-8 pr-4 pt-32">
+        <div className="flex items-end justify-between gap-4">
+          <div className="flex items-start gap-2">
             <GlitchText text="Survival_kit" />
             <p className="text-sm">v1.346</p>
           </div>
@@ -28,8 +28,8 @@ export default function HomePage() {
         </div>
         <div className="min-h-32"></div>
         <div className="flex flex-col">
-          <div className="w-full flex">
-            <div className="w-full flex justify-center">
+          <div className="flex w-full">
+            <div className="flex w-full justify-center">
               <PixelTextFormatter
                 text="Departure mono is a monospaced pixel font with a lo-fi technical vibe"
                 maxWidth={25}
@@ -55,7 +55,7 @@ export default function HomePage() {
         />
         <MissionReport></MissionReport>
       </section>
-      <footer className="bg-stone-900 h-96 p-6"></footer>
+      <footer className="h-96 bg-stone-900 p-6"></footer>
     </div>
   );
 }
