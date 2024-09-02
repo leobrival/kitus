@@ -24,9 +24,9 @@ function MissionReport() {
           <h2 className="mb-2 font-bold">## OVERVIEW</h2>
           <p className="mb-4">
             During the exploration of Kerberos 5, our instruments detected
-            unexplained energy bursts emanating from the object's polar region.
-            These signatures do not match any known natural phenomenon and
-            warrant further investigation.
+            unexplained energy bursts emanating from the object&apos;s polar
+            region. These signatures do not match any known natural phenomenon
+            and warrant further investigation.
           </p>
         </section>
 
@@ -65,7 +65,7 @@ function MissionReport() {
               <tr>
                 <td className="p-2">Tholins</td>
                 <td className="p-2">1100</td>
-                <td className="p-2">Common in Kerberos 5's atmosphere</td>
+                <td className="p-2">Common in Kerberos 5&apos;s atmosphere</td>
               </tr>
             </tbody>
           </table>

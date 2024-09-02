@@ -55,7 +55,12 @@ export default function HomePage() {
         />
         <MissionReport></MissionReport>
       </section>
-      <footer className="h-96 bg-stone-900 p-6"></footer>
+      <footer className="h-96 bg-stone-900 p-6">
+        <PixelTextFormatter
+          text="And of course, departure mono is prefect for your 8-bit video game or ASCII art"
+          maxWidth={25}
+        />
+      </footer>
     </div>
   );
 }
