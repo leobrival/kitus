@@ -1,11 +1,23 @@
 import React from "react";
 
-const PixelTextFormatter = ({ text, maxWidth = 30 }) => {
+// Interface pour les props du composant
+interface PixelTextFormatterProps {
+  text: string;
+  maxWidth?: number;
+}
+
+// Type pour la fonction de division du texte en lignes
+type SplitIntoLinesFunction = (text: string, maxWidth: number) => string[];
+
+const PixelTextFormatter: React.FC<PixelTextFormatterProps> = ({
+  text,
+  maxWidth = 30,
+}) => {
   // Fonction pour diviser le texte en lignes
-  const splitIntoLines = (text, maxWidth) => {
-    const words = text.split(" ");
-    const lines = [];
-    let currentLine = [];
+  const splitIntoLines: SplitIntoLinesFunction = (text, maxWidth) => {
+    const words: string[] = text.split(" ");
+    const lines: string[] = [];
+    let currentLine: string[] = [];
 
     words.forEach((word) => {
       if ((currentLine.join(" ") + " " + word).length <= maxWidth) {
@@ -23,7 +35,7 @@ const PixelTextFormatter = ({ text, maxWidth = 30 }) => {
     return lines;
   };
 
-  const formattedLines = splitIntoLines(text, maxWidth);
+  const formattedLines: string[] = splitIntoLines(text, maxWidth);
 
   return (
     <p className="font-mono text-xs leading-3">

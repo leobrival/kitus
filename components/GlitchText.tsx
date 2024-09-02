@@ -1,13 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+// Définition de l'interface pour les props du composant
+interface GlitchTextProps {
+  text: string;
+}
+
+// Type pour la map de caractères
+type CharMap = {
+  [key: string]: string;
+};
 
 // Déclaration de la fonction pour le composant GlitchText
-export default function GlitchText({ text }) {
-  const [glitchedText, setGlitchedText] = useState(text);
+export default function GlitchText({
+  text,
+}: GlitchTextProps): React.ReactElement {
+  const [glitchedText, setGlitchedText] = useState<string>(text);
 
   useEffect(() => {
-    const charMap = {
+    const charMap: CharMap = {
       A: "@",
       E: "3",
       I: "1",
@@ -17,12 +29,10 @@ export default function GlitchText({ text }) {
       _: " ",
     };
 
-    const glitchEffect = () => {
-      const textArray = text.split("");
-      const newTextArray = textArray.map((char) => {
-        // Randomize whether to glitch this character
+    const glitchEffect = (): void => {
+      const textArray: string[] = text.split("");
+      const newTextArray: string[] = textArray.map((char: string) => {
         if (Math.random() < 0.3) {
-          // 30% chance to glitch any given character
           return charMap[char.toUpperCase()] || char;
         }
         return char;
@@ -30,33 +40,30 @@ export default function GlitchText({ text }) {
 
       setGlitchedText(newTextArray.join(""));
 
-      // Revenir au texte original après un court délai
       setTimeout(() => {
         setGlitchedText(text);
       }, 250);
     };
 
-    const randomizeInterval = () => {
-      // Utilisez un intervalle de temps aléatoire entre 200 et 1000 ms pour le glitch
-      const randomInterval = Math.floor(Math.random() * (1000 - 200 + 1)) + 200;
-      return randomInterval;
+    const randomizeInterval = (): number => {
+      return Math.floor(Math.random() * (1000 - 200 + 1)) + 200;
     };
 
-    // Définir un intervalle initial
-    let intervalId = setInterval(glitchEffect, randomizeInterval());
+    let intervalId: NodeJS.Timeout = setInterval(
+      glitchEffect,
+      randomizeInterval()
+    );
 
-    // Remplace l'intervalle actuel par un nouveau avec un intervalle de temps aléatoire
-    const intervalController = () => {
+    const intervalController = (): void => {
       clearInterval(intervalId);
       intervalId = setInterval(() => {
         glitchEffect();
-        intervalController(); // Redémarrer avec un nouvel intervalle aléatoire
+        intervalController();
       }, randomizeInterval());
     };
 
     intervalController();
 
-    // Nettoyer l'intervalle lorsque le composant est démonté
     return () => clearInterval(intervalId);
   }, [text]);
 
